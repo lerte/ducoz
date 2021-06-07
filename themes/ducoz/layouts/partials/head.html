@@ -14,17 +14,20 @@
   <link rel="stylesheet" href="{{ .URL | absURL }} ">
   {{ end }}
 
-  {{ "<!-- Main Stylesheet -->" | safeHTML }}
+  {{ "<!-- Bulma -->" | safeHTML }}
   {{ $bulma := resources.Get "bulma/bulma.sass" | resources.ToCSS | minify }}
-  <link rel="stylesheet" href="{{ $bulma.Permalink | relURL}}" integrity="{{ $bulma.Data.Integrity }}" media="screen">
+  <link rel="stylesheet" href="{{ $bulma.Permalink | relURL}}">
+  {{ "<!-- FontAwesome -->" | safeHTML }}
+  <link rel="stylesheet" href="{{ "font-awesome/css/font-awesome.min.css" | absURL }}" />
+  {{ "<!-- Main Stylesheets -->" | safeHTML }}
+  {{ $style := resources.Get "sass/style.sass" | resources.ToCSS | minify }}
+  <link rel="stylesheet" href="{{ $style.Permalink | relURL}}">
 
   {{ range .AlternativeOutputFormats -}}
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
 {{ end -}}
 
   {{ "<!--Favicon-->" | safeHTML }}
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" href="{{ "images/favicon.png" | absURL }}">
 
 </head>

@@ -16,9 +16,13 @@
 <html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
   {{- partial "head.html" . -}}
   <body class="{{.Section}}">
-    <div class="wrapper">
+    <div class="wrapper" id="app">
       {{- partial "header.html" . -}} {{- block "main" . }}{{- end }} {{-
       partial "footer.html" . -}}
     </div>
+    {{ $vue := resources.Get "js/vue.min.js" }}
+    <script src="{{ $vue.Permalink }}"></script>
+    {{ $main := resources.Get "js/main.js" | minify }}
+    <script src="{{ $main.Permalink }}"></script>          
   </body>
 </html>

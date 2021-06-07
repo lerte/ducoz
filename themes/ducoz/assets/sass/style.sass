@@ -1,0 +1,36 @@
+.navbar
+  box-shadow: 0 0 5px 1px
+  &-brand
+    &.showMenu
+      box-shadow: inset 0px -2px 0px 0px rgba(10,10,10,.1)
+  &-burger
+    span
+      transition: .4s
+    &.showMenu
+      transform: rotate(90deg)
+      span
+        &:first-child
+          margin-top: 5px
+          transform: rotate(45deg) translate(0,0)
+        &:nth-child(2)
+          transform: scaleX(0)
+        &:last-child
+          margin-top: -5px
+          transform: rotate(-45deg) translate(0,0)
+  &-end
+    .theme-switch-wrapper
+      .theme-switch 
+        .icon
+          cursor: pointer    
+        input
+          display: none
+          &+.mode-container .icon
+            &:first-child
+              display: block          
+            &:last-child
+              display: none         
+          &:checked+.mode-container .icon
+            &:first-child
+              display: none
+            &:last-child
+              display: block             
