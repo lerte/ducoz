@@ -1,0 +1,13 @@
+name = "Ducoz"
+license = "MIT"
+licenselink = "https://github.com/lerte/ducoz/blob/master/LICENSE"
+description = "Hugo bulma theme"
+homepage = "https://github.com/lerte/ducoz"
+tags = ["bulma", "blog", "tag", "portfolio", "responsive"]
+features = ["bulma", "responsive", "features"]
+min_version = "0.54.0"
+
+[author]
+    name = "Lerte Smith"
+    homepage = "https://ducoz.com"
+

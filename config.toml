@@ -1,0 +1,11 @@
+baseURL = "http://ducoz.com"
+languageCode = "en-us"
+title = "Hugo ducoz theme"
+
+theme = "ducoz"
+
+# Site Params
+[params]
+  # Meta data
+  description = "Ducoz Hugo Bulma theme"
+  author = "Lerte Smith"
