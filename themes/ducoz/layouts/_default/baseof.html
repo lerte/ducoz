@@ -15,7 +15,7 @@
 </style>
 <html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
   {{- partial "head.html" . -}}
-  <body class="{{.Section}}">
+  <body class="{{ with .Site.Params.fixedTop }}has-navbar-fixed-top{{ else }}{{ end }}">
     <div class="wrapper" id="app">
       {{- partial "header.html" . -}} {{- block "main" . }}{{- end }} {{-
       partial "footer.html" . -}}

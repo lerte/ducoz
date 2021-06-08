@@ -1,4 +1,4 @@
-<nav class="navbar" role="navigation" aria-label="main navigation">
+<nav class="navbar has-shadow {{ with .Site.Params.fixedTop }}is-fixed-top{{ else }}{{ end }}" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" href="/">
       <img
@@ -6,14 +6,13 @@
         height="28"
       />
     </a>
-
     <a
       role="button"
       class="navbar-burger"
       @click="isActive = !isActive"
       :class="{showMenu: isActive}"
       aria-label="menu"
-      aria-expanded="false"
+      :aria-expanded="isActive ? 'true' : 'false'"
       data-target="navMenu"
     >
       <span aria-hidden="true"></span>
@@ -24,10 +23,11 @@
 
   <div class="navbar-menu" id="navMenu" :class="{'is-active': isActive}">
     <div class="navbar-start">
-      <a class="navbar-item"> Home </a>
-      <a class="navbar-item"> Blog </a>
-      <a class="navbar-item"> Portfolio </a>
-      <a class="navbar-item"> About </a>
+      {{$menu := (.Site.Menus.nav)}} 
+      {{$len := (len $menu)}} 
+      {{ range $index, $element := $menu }} 
+        <a class="navbar-item" href="{{ .URL | absURL}}"> {{ .Name }} </a>
+      {{ end }}
     </div>
 
     <div class="navbar-end">
