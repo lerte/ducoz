@@ -1,10 +1,10 @@
 name = "Ducoz"
 license = "MIT"
 licenselink = "https://github.com/lerte/ducoz/blob/master/LICENSE"
-description = "Hugo bulma theme"
+description = "Hugo bootstrap5 theme"
 homepage = "https://github.com/lerte/ducoz"
-tags = ["bulma", "blog", "tag", "portfolio", "responsive"]
-features = ["bulma", "responsive", "features"]
+tags = ["bootstrap", "bootstrap5", "dark mode", "blog", "tag", "portfolio", "responsive"]
+features = ["bootstrap5", "responsive", "dark mode"]
 min_version = "0.54.0"
 
 [author]

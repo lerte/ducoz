@@ -23,5 +23,7 @@ const app = new Vue({
   },
   created(){
     this.initTheme();
+    // Add table class
+    document.querySelector('table').setAttribute('class', 'table')
   }
 })
