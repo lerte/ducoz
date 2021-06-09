@@ -1,25 +1,12 @@
 <!DOCTYPE html>
-<style>
-  html {
-    height: 100vh;
-  }
-  body {
-    min-height: 100vh;
-    display: grid;
-    grid-template-rows: 1fr auto;
-  }
-  .footer {
-    grid-row-start: 2;
-    grid-row-end: 3;
-  }
-</style>
 <html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
   {{- partial "head.html" . -}}
-  <body class="{{ with .Site.Params.fixedTop }}has-navbar-fixed-top{{ else }}{{ end }}">
-    <div class="wrapper" id="app">
-      {{- partial "header.html" . -}} {{- block "main" . }}{{- end }} {{-
-      partial "footer.html" . -}}
+  <body>
+    <div id="app" class="container{{ with .Site.Params.fullWidth }}-fluid{{ else }}{{ end }}">
+      {{- partial "header.html" . -}} {{- block "main" . }}{{- end }} {{- partial "footer.html" . -}}
     </div>
+    {{ $bootstrap := resources.Get "js/bootstrap.bundle.min.js" }}
+    <script src="{{ $bootstrap.Permalink }}"></script>    
     {{ $vue := resources.Get "js/vue.min.js" }}
     <script src="{{ $vue.Permalink }}"></script>
     {{ $main := resources.Get "js/main.js" | minify }}

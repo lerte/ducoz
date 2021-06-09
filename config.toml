@@ -30,3 +30,4 @@ theme = "ducoz"
   dateFormat = "8 June 2021"
 
   fixedTop = true
+  fullWidth = true

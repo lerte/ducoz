@@ -1,20 +1,40 @@
-<footer class="footer">
-  <div class="content">
-    <div class="columns">
-      <div class="column"></div>
-      <div class="column">
-        <h5>Sitemap</h5>
-        <p><a href="/about">About Company</a></p>
-        <p><a href="/portfolio">Projects</a></p>
-        <p><a href="/blog">Blog</a></p>
-        <p><a href="/contact">Contact</a></p>
+<div class="position-fixed py-2 px-3 bg-dark text-white rounded-pill" style="bottom: 1rem; right: 1rem">
+  <div class="form-check form-switch pull-right">
+    <input class="form-check-input" type="checkbox" v-model="isDarkMode" />
+    <label for="darkMode" v-text="isDarkMode?'Dark':'Light'"></label>
+  </div>
+</div>
+<footer>
+  <div>
+    <div class="row">
+      <div class="col-4 col-md">
+        <h5>Sitemaps</h5>
+        <ul class="list-unstyled text-small">
+          <li class="mb-1">
+            <a href="/about">About Company</a>
+          </li>
+          <li class="mb-1">
+            <a href="/portfolio">Projects</a>
+          </li>
+          <li class="mb-1">
+            <a href="/blog">Blog</a>
+          </li>
+          <li class="mb-1">
+            <a href="/contact">Contact</a>
+          </li>
+        </ul>
       </div>
-      <div class="column">
-        <h5>Social Media</h5>
-        <p><a href="https://github.com/lerte">Github</a></p>
-        <p><a href="https://codepen.io/lerte">Codepen</a></p>
+      <div class="col-4 col-md">
+        <h5>Socials</h5>
+        <ul class="list-unstyled text-small">
+          <li class="mb-1">
+            <a href="https://github.com/lerte">Github</a>
+          </li>
+          <li class="mb-1">
+            <a href="https://codepen.io/lerte">Codepen</a>
+          </li>
+        </ul>
       </div>
-      <div class="column"></div>
     </div>
   </div>
 </footer>

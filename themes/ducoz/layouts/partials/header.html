@@ -1,54 +1,30 @@
-<nav class="navbar has-shadow {{ with .Site.Params.fixedTop }}is-fixed-top{{ else }}{{ end }}" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="/">
-      <img
-        src='{{ "images/logo.png" | absURL }}'
-        height="28"
-      />
-    </a>
-    <a
-      role="button"
-      class="navbar-burger"
-      @click="isActive = !isActive"
-      :class="{showMenu: isActive}"
-      aria-label="menu"
-      :aria-expanded="isActive ? 'true' : 'false'"
-      data-target="navMenu"
-    >
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-
-  <div class="navbar-menu" id="navMenu" :class="{'is-active': isActive}">
-    <div class="navbar-start">
-      {{$menu := (.Site.Menus.nav)}} 
-      {{$len := (len $menu)}} 
-      {{ range $index, $element := $menu }} 
-        <a class="navbar-item" href="{{ .URL | absURL}}"> {{ .Name }} </a>
-      {{ end }}
-    </div>
-
-    <div class="navbar-end">
-      <a class="bd-navbar-icon navbar-item" href="https://github.com/lerte/ducoz" target="_blank">
-        <span class="icon">
-          <i class="fa fa-lg fa-github"></i>
-        </span>
-      </a>
-      <div class="navbar-item theme-switch-wrapper">
-        <label class="theme-switch" for="checkbox">
-          <input type="checkbox" id="checkbox">
-          <div class="mode-container">
-            <span class="icon">
-              <i class="fa fa-lg fa-sun-o"></i>
-            </span>
-            <span class="icon">
-              <i class="fa fa-lg fa-moon-o"></i>
-            </span>
-          </div>
-        </label>
-      </div>      
+<nav class="navbar navbar-expand-lg bg-light {{ with .Site.Params.fixedTop }}fixed-top{{ else }}{{ end }}" :class="`navbar-${isDarkMode?'dark':'light'}`">
+  <div class="container{{ with .Site.Params.fullWidth }}-fluid{{ else }}{{ end }}">
+    <a class="navbar-brand" href="/">Ducoz</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        {{$menu := (.Site.Menus.nav)}} 
+        {{$len := (len $menu)}} 
+        {{ range $index, $element := $menu }}
+          <li>
+            <a class="nav-link" href="{{ .URL | absURL}}"> {{ .Name }} </a>
+          </li>
+        {{ end }}
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+      <div class="ms-2 d-flex">
+        <a href="https://github.com/lerte/ducoz">
+          <span class="icon">
+            <i class="fa fa-lg fa-github"></i>
+          </span>
+        </a>
+      </div>
     </div>
   </div>
 </nav>
