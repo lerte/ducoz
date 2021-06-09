@@ -17,8 +17,10 @@
   {{ "<!-- FontAwesome -->" | safeHTML }}
   <link rel="stylesheet" href="{{ "font-awesome/css/font-awesome.min.css" | absURL }}" />
   {{ "<!-- Main Stylesheets -->" | safeHTML }}
-  {{ $style := resources.Get "css/dark.css" }}
-  <link rel="stylesheet" href="{{ $style.Permalink | relURL}}">
+  {{ $dark := resources.Get "css/dark.css" }}
+  <link rel="stylesheet" href="{{ $dark.Permalink | relURL}}">
+  {{ $style := resources.Get "css/style.css" }}
+  <link rel="stylesheet" href="{{ $style.Permalink | relURL}}">  
 
   {{ range .AlternativeOutputFormats -}}
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
   {{- partial "head.html" . -}}
-  <body>
+  <body class="{{ with .Site.Params.fixedTop }}fixed-nav{{ else }}{{ end }}">
     <div id="app" class="container{{ with .Site.Params.fullWidth }}-fluid{{ else }}{{ end }}">
       {{- partial "header.html" . -}} {{- block "main" . }}{{- end }} {{- partial "footer.html" . -}}
     </div>
