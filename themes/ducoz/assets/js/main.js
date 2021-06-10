@@ -4,26 +4,22 @@ const app = new Vue({
     isDarkMode: false
   },
   watch: {
-    isDarkMode: function(dark){
-      if(dark){
-        document.body.setAttribute('data-theme', 'dark');
-        localStorage.setItem('darkMode', 'dark');
-      }else{
-        document.body.removeAttribute('data-theme');
-        localStorage.removeItem('darkMode');
-      }  
+    isDarkMode: function(mode) {
+      const darkMode = mode ? 'dark' : 'light'
+      localStorage.setItem('darkMode', darkMode)
+      document.body.setAttribute('data-theme', darkMode)
+      document.querySelector('table') && document.querySelector('table').setAttribute('class', `table table-${darkMode}`)
     }
   },
   methods: {
     initTheme() {
-      const darkThemeSelected = localStorage.getItem('darkMode') !== null && localStorage.getItem('darkMode') === 'dark';
-      this.isDarkMode = darkThemeSelected;
-      darkThemeSelected ? document.body.setAttribute('data-theme', 'dark') : document.body.removeAttribute('data-theme');
+      const darkMode = localStorage.getItem('darkMode') || 'light'
+      document.body.setAttribute('data-theme', darkMode)
+      this.isDarkMode = darkMode === 'dark'
+      document.querySelector('table') && document.querySelector('table').setAttribute('class', `table table-${darkMode}`)
     }   
   },
   created(){
-    this.initTheme();
-    // Add table class
-    document.querySelector('table').setAttribute('class', 'table')
+    this.initTheme()
   }
 })
