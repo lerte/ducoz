@@ -1,10 +1,11 @@
-<div class="position-fixed py-2 px-3 bg-dark text-white rounded-pill" style="bottom: 1rem; right: 1rem">
-  <div class="form-check form-switch pull-right">
-    <input class="form-check-input" type="checkbox" v-model="isDarkMode" />
-    <label for="darkMode" v-text="isDarkMode?'Dark':'Light'"></label>
-  </div>
-</div>
+
 <footer class="pt-3 bg-light">
+  <div class="position-fixed py-2 px-3 bg-dark text-white rounded-pill" style="bottom: 1rem; right: 1rem">
+    <div class="form-check form-switch pull-right">
+      <input class="form-check-input" type="checkbox" v-model="isDarkMode" />
+      <label for="darkMode" v-text="isDarkMode?'Dark':'Light'"></label>
+    </div>
+  </div> 
   <div class="container{{ with .Site.Params.fullWidth }}-fluid{{ else }}{{ end }}">
     <div class="row">
       <div class="col-4 col-md">

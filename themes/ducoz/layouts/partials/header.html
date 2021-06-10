@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-light {{ with .Site.Params.fixedTop }}fixed-top{{ else }}{{ end }}" :class="`navbar-${isDarkMode?'dark':'light'}`">
+<nav class="navbar navbar-expand-lg bg-light {{ with .Site.Params.fixedTop }}fixed-top{{ else }}{{ end }} {{ with .Site.Params.stickyTop }}sticky-top{{ else }}{{ end }}" :class="`navbar-${isDarkMode?'dark':'light'}`">
   <div class="container{{ with .Site.Params.fullWidth }}-fluid{{ else }}{{ end }}">
     <a class="navbar-brand" href="/">Ducoz</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

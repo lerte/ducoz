@@ -29,5 +29,6 @@ theme = "ducoz"
   description = "Ducoz Hugo Bootstrap5 theme include dark mode"
   dateFormat = "8 June 2021"
 
-  fixedTop = true
+  #fixedTop = true
+  stickyTop = true
   fullWidth = true
