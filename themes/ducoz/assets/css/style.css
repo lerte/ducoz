@@ -1,3 +1,7 @@
 body.fixed-nav{
   padding-top: 4.5rem;
 }
+footer a{
+  color: rgba(0,0,0,.55);
+  text-decoration: none;
+}

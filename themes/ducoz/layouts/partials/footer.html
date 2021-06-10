@@ -5,34 +5,36 @@
   </div>
 </div>
 <footer class="pt-3 bg-light">
-  <div class="row">
-    <div class="col-4 col-md">
-      <h5>Sitemaps</h5>
-      <ul class="list-unstyled text-small">
-        <li class="mb-1">
-          <a href="/about">About Company</a>
-        </li>
-        <li class="mb-1">
-          <a href="/portfolio">Projects</a>
-        </li>
-        <li class="mb-1">
-          <a href="/blog">Blog</a>
-        </li>
-        <li class="mb-1">
-          <a href="/contact">Contact</a>
-        </li>
-      </ul>
-    </div>
-    <div class="col-4 col-md">
-      <h5>Socials</h5>
-      <ul class="list-unstyled text-small">
-        <li class="mb-1">
-          <a href="https://github.com/lerte">Github</a>
-        </li>
-        <li class="mb-1">
-          <a href="https://codepen.io/lerte">Codepen</a>
-        </li>
-      </ul>
+  <div class="container{{ with .Site.Params.fullWidth }}-fluid{{ else }}{{ end }}">
+    <div class="row">
+      <div class="col-4 col-md">
+        <h5>Sitemaps</h5>
+        <ul class="list-unstyled">
+          <li class="mb-1">
+            <a href="/about">About Company</a>
+          </li>
+          <li class="mb-1">
+            <a href="/portfolio">Projects</a>
+          </li>
+          <li class="mb-1">
+            <a href="/blog">Blog</a>
+          </li>
+          <li class="mb-1">
+            <a href="/contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-4 col-md">
+        <h5>Socials</h5>
+        <ul class="list-unstyled text-small">
+          <li class="mb-1">
+            <a href="https://github.com/lerte">Github</a>
+          </li>
+          <li class="mb-1">
+            <a href="https://codepen.io/lerte">Codepen</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </footer>
